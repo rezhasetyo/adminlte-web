@@ -48,6 +48,6 @@ use App\Http\Controllers\GenreController;
 
 // LIBRARY PACKAGE
     // 1. DOMPDF
-    Route::get('/pdf', [GenreController::class,'index']);
-    Route::get('/cetak', [GenreController::class, 'createPDF']);
+    Route::get('/genre', [GenreController::class,'index']);
+    Route::get('/pdf', [GenreController::class, 'createPDF']);
 

@@ -125,9 +125,9 @@
             </a>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="/pdf" class="nav-link">
+                    <a href="/genre" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>1. DOMPDF</p>
+                    <p>Tabel Genre</p>
                     </a>
                 </li>
                 </ul>
