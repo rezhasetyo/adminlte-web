@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sanbercode Laravel</title>
+  <title>Belajar Laravel 8</title>
 
   @stack('style')
 

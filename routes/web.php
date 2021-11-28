@@ -50,4 +50,7 @@ use App\Http\Controllers\GenreController;
     // 1. DOMPDF
     Route::get('/genre', [GenreController::class,'index']);
     Route::get('/pdf', [GenreController::class, 'createPDF']);
+    Route::get('/qr', function () {
+        return view('library/qrcode');
+    });
 
