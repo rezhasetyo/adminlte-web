@@ -7,6 +7,7 @@ use App\Http\Controllers\CastController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\StaticTableController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +21,12 @@ use App\Http\Controllers\GenreController;
 */
 
 // TABEL STATIS
-    Route::get('/table', function () {
-        return view('static/table');
-    });
-    Route::get('/data-table', function () {
-        return view('static/data-table');
-    });
+    // Route::get('/table', function () {
+    //     return view('static/table');    
+    // });
+    Route::get('/table', [StaticTableController::class,'table']);
+    Route::get('/data-table', [StaticTableController::class,'dataTable']);
+
 
 // CRUD AWAL (ELOQUENT)
     Route::resource('/cast', App\Http\Controllers\CastController::class);

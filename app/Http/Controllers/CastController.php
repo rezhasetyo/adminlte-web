@@ -6,7 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\Cast;
 
 class CastController extends Controller
-{
+{   
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(){
         $datas = Cast::all();
         return view('crud.cast', compact('datas'));
