@@ -41,7 +41,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Cast (Factory/Faker)
+                Cast
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -67,7 +67,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Profile (Query Builder)
+                Profile
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -93,7 +93,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Film (Upload Image)
+                Film
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -133,7 +133,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="/film/create" class="nav-link">
+                    <a href="/qr" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>QRCode</p>
                     </a>

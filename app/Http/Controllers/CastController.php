@@ -14,12 +14,12 @@ class CastController extends Controller
     
     public function index(){
         $datas = Cast::all();
-        return view('crud.cast', compact('datas'));
+        return view('cast.index', compact('datas'));
     }
 
     public function create(){   
         $model = new Cast;
-        return view('crud.tambah', compact('model'));
+        return view('cast.tambah', compact('model'));
     }
 
     public function store(Request $request){
@@ -43,12 +43,12 @@ class CastController extends Controller
 
     public function show($id){
         $model = Cast::find($id);
-        return view('crud.show', compact('model'));
+        return view('cast.show', compact('model'));
     }
 
     public function edit($id){
         $model = Cast::find($id);
-        return view('crud.edit', compact('model'));
+        return view('cast.edit', compact('model'));
     }
 
     public function update(Request $request, $id){   

@@ -9,7 +9,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Cast (Factory/Faker)</a></li>
+              <li class="breadcrumb-item"><a href="#">Cast</a></li>
               <li class="breadcrumb-item active">Detail</li>
             </ol>
           </div>

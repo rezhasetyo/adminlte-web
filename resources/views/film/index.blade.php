@@ -9,7 +9,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/">Film (Upload Image)</a></li>
+              <li class="breadcrumb-item"><a href="#">Film</a></li>
               <li class="breadcrumb-item active">Index</li>
             </ol>
           </div>
@@ -38,8 +38,14 @@
             </div>
         </div>
     </div>
+    <div>
+      
+    </div>
     @empty
-        <h4>Data Film Belum Ada</h4>
+        <div class="ml-3">
+        <h5>Data Film Belum Ada</h5>
+            <a href="{{ url('film/create') }}" class="btn btn-primary">Tambah</a>
+        </div>
     @endforelse
 </div>
 
