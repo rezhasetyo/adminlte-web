@@ -6,7 +6,7 @@ use App\Http\Controllers\PDF;
 use App\Http\Controllers\CastController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FilmController;
-use App\Http\Controllers\GenreController;
+use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\StaticTableController;
 
 /*
@@ -28,29 +28,23 @@ use App\Http\Controllers\StaticTableController;
     Route::get('/data-table', [StaticTableController::class,'dataTable']);
 
 
-// CRUD AWAL (ELOQUENT)
-    Route::resource('/cast', App\Http\Controllers\CastController::class);
+// CAST
+    Route::resource('/cast',CastController::class);
 
-// CRUD QUERY BUILDER
-    // Route::get('/profile', [ProfileController::class,'index']);
-    Route::get('/profile/create', [ProfileController::class,'create']);
-    Route::post('/profile/store', [ProfileController::class, 'store']);
-    // Route::get('/profile/{id}', [ProfileController::class,'show']);
-    // Route::get('/profile/{id}/edit', [ProfileController::class,'edit']);
-    // Route::put('/profile/{id}/update', [ProfileController::class,'update']);
-    // Route::delete('/profile/{id}/delete', [ProfileController::class,'delete']);
+// PROFILE
+   
 
 // AUTHENTICATION DAN ROUTE HOME
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Auth::routes();
 
-// CRUD UPLOAD IMAGE
-    Route::resource('/film', App\Http\Controllers\FilmController::class);
+// FILM
+    Route::resource('/film', FilmController::class);
 
 // LIBRARY PACKAGE
     // 1. DOMPDF
-    Route::get('/genre', [GenreController::class,'index']);
-    Route::get('/pdf', [GenreController::class, 'createPDF']);
+    Route::get('/genre', [LibraryController::class,'index']);
+    Route::get('/pdf', [LibraryController::class, 'createPDF']);
     Route::get('/qr', function () {
         return view('library/qrcode');
     });

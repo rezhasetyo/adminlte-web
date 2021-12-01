@@ -7,7 +7,7 @@ use App\Models\Genre;
 use PDF;
 
 
-class GenreController extends Controller
+class LibraryController extends Controller
 {   
     public function __construct()
     {
