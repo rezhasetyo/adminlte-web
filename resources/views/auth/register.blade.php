@@ -26,7 +26,7 @@
       <form action="{{ route('register') }}" method="POST">
         @csrf
         <div class="input-group mb-3">
-        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" required autocomplete="name" autofocus placeholder="Inputkan Nama">
+        <input id="name" type="text" class="form-control" name="name" placeholder="Inputkan Nama">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -34,14 +34,14 @@
           </div>
         </div>
         @error('name')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+        @enderror
         
 
         <div class="input-group mb-3">
-        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" required autocomplete="email" placeholder="Inputkan Email">
+        <input id="email" type="email" class="form-control" placeholder="Inputkan Email" name="email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -49,13 +49,13 @@
           </div>
         </div>
         @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+        @enderror
 
         <div class="input-group mb-3">
-        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Inputkan Password">
+        <input id="password" type="password" class="form-control" placeholder="Inputkan Password" name="password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -63,10 +63,10 @@
           </div>
         </div>
         @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+        @enderror
 
         <div class="input-group mb-3">
         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Inputkan Password Lagi">
@@ -76,6 +76,40 @@
             </div>
           </div>
         </div>
+
+        <div class="input-group mb-3">
+        <input id="umur" type="number" class="form-control" name="umur" placeholder="Inputkan Umur">
+        </div>
+        @error('umur')
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+        @enderror
+
+        <div class="input-group mb-3">
+        <textarea name="alamat" id="alamat" class="form-control" placeholder="Masukan Alamat"></textarea>
+        </div>
+        @error('alamat')
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+        @enderror
+
+        <div class="input-group mb-3">
+        <textarea name="bio" id="bio" class="form-control" placeholder="Masukan Biodata"></textarea>
+        </div>
+        @error('bio')
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+        @enderror
+
+
+
+
+
+
+
 
         <div class="row">
           <div class="col-8">
@@ -94,18 +128,6 @@
         </div>
       </form>
 
-      <!-- <div class="social-auth-links text-center">
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i>
-          Sign up using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i>
-          Sign up using Google+
-        </a>
-      </div> -->
-
-      
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->
