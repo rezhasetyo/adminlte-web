@@ -32,7 +32,7 @@ use App\Http\Controllers\StaticTableController;
     Route::resource('/cast',CastController::class);
 
 // PROFILE
-   
+    Route::resource('profile', ProfileController::class)->only([ 'index', 'update' ]);
 
 // AUTHENTICATION DAN ROUTE HOME
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -42,7 +42,6 @@ use App\Http\Controllers\StaticTableController;
     Route::resource('/film', FilmController::class);
 
 // LIBRARY PACKAGE
-    // 1. DOMPDF
     Route::get('/genre', [LibraryController::class,'index']);
     Route::get('/pdf', [LibraryController::class, 'createPDF']);
     Route::get('/qr', function () {

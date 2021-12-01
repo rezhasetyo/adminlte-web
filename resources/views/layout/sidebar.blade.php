@@ -11,9 +11,18 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="/profile" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Edit Profile
+              </p>
+            </a>
+          </li>
           
               
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
@@ -35,7 +44,7 @@
                     </a>
                 </li>
                 </ul>
-          </li>
+          </li> -->
 
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -61,32 +70,6 @@
                     </a>
                 </li>
                 </ul>
-            </li>
-
-            <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Profile
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-                <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="/profile" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Daftar Profile</p>
-                    </a>
-                </li>
-                </ul>
-                <!-- <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="/cast/create" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Tambah Cast</p>
-                    </a>
-                </li> -->
-                <!-- </ul> -->
             </li>
 
             <li class="nav-item">
@@ -133,7 +116,7 @@
                 </ul>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="/qr" class="nav-link">
+                    <a href="/film/create" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>QRCode</p>
                     </a>
@@ -141,5 +124,6 @@
                 </ul>
             </li>
 
-                
+            
+            
       </nav>
