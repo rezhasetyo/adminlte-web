@@ -11,5 +11,9 @@ class Film extends Model
 
     protected $fillable = ['judul', 'tahun', 'ringkasan', 'poster','genre_id'];
 
-    
+    public function genre()
+    {
+        return $this->belongsTo(Genre::class);     // Yang ada foreign key nya (Relasi One to Many) (BELONGSTO)
+    }
+
 }

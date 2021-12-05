@@ -25,5 +25,5 @@
 <p><b>{{ $model->tahun }}</b></p>
 <p>{{ $model->ringkasan }}</p>
 
-<a href="/film" class="btn btn-secondary">Kembali</a>
+<a href="/film" class="btn btn-secondary mb-3">Kembali</a>
 @endsection

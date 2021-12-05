@@ -25,13 +25,14 @@
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="{{asset('poster/'. $item->poster)}}" style="height:100px;">
             <div class="card-body">
-                <h3> <b> {{ $item->judul }} </b> </h3>
+                <h3 style="line-height: 0.8em;"> <b> {{ $item->judul }} </b> </h3>
+                <span class="badge badge-info mb-3">{{ $item -> genre -> nama }}</span>
                 <!-- <p>{{ Str::limit($item->ringkasan, 50, $end='....') }}</p> -->
                 <p>{{ Str::limit($item->ringkasan, 50) }}</p>
                 <form action="{{ url('film/'.$item->id) }}" method="POST">
                   @csrf
                   <input type="hidden" name="_method" value="Delete">
-                  <a href="/film/{{ $item->id }}" class="btn btn-info btn-sm">Detail</a>
+                  <a href="/film/{{ $item->id }}" class="btn btn-success btn-sm">Detail</a>
                   <a href="{{ url( 'film/' .$item->id. '/edit' ) }}" class="btn btn-warning btn-sm">Edit</a>
                   <button class="btn btn-danger btn-sm" type="submit">Delete</button>
               </form> 
