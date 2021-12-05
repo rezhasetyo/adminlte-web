@@ -9,4 +9,8 @@ class Profile extends Model
 {
     use HasFactory;
     protected $fillable = ['umur', 'alamat', 'bio', 'user_id'];
+
+    public function user(){
+        return $this->belongsTo(User::class);       // YANG ADA FOREIGN KEY NYA MENGGUNAKAN {belongsTo}
+    }
 }

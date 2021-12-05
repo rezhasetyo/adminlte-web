@@ -24,6 +24,18 @@
                 <form method="POST" action="{{ url('profile/' .$profile->id) }}">
                     @csrf
                     @method('PUT')
+
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" id="name" name="name" class="form-control" 
+                             value="{{$profile -> user -> name}}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email" class="form-control" 
+                             value="{{$profile -> user -> email}}" disabled>
+                        </div>
+
                         <div class="form-group">
                             <label for="umur">Umur</label>
                             <input type="number" id="umur" name="umur" class="form-control" 

@@ -87,7 +87,7 @@
           <img src="{{asset('adminlte')}}/dist/img/alex.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+          <a href="#" class="d-block">{{ Auth::user()->name }} ({{ Auth::user()->profile->umur }})</a>
         </div>
       </div>
 
