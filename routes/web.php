@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\StaticTableController;
+use App\Http\Controllers\GenreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,8 +42,11 @@ use App\Http\Controllers\StaticTableController;
 // FILM
     Route::resource('/film', FilmController::class);
 
+// GENRE
+    Route::resource('genre', GenreController::class)->only([ 'index', 'show' ]);
+
 // LIBRARY PACKAGE
-    Route::get('/genre', [LibraryController::class,'index']);
+    Route::get('/library', [LibraryController::class,'index']);
     Route::get('/pdf', [LibraryController::class, 'createPDF']);
     Route::get('/qr', function () {
         return view('library/qrcode');

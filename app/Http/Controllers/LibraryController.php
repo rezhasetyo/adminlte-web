@@ -17,7 +17,7 @@ class LibraryController extends Controller
     public function index()
     {
         $datas = Genre::all();
-        return view('library.genre', compact('datas'));
+        return view('library.index', compact('datas'));
     }
 
     public function createPDF() {
