@@ -13,7 +13,11 @@ class Film extends Model
 
     public function genre()
     {
-        return $this->belongsTo(Genre::class);     // Yang ada foreign key nya (Relasi One to Many) (BELONGSTO)
+        return $this->belongsTo(Genre::class);     // Yang tidak ada foreign key nya (Relasi One to Many) (belongsTo)
+    }
+
+    public function kritik(){
+        return $this->hasMany(Kritik::class);
     }
 
 }

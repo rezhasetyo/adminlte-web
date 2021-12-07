@@ -11,6 +11,6 @@ class Profile extends Model
     protected $fillable = ['umur', 'alamat', 'bio', 'user_id'];
 
     public function user(){
-        return $this->belongsTo(User::class);       // YANG ADA FOREIGN KEY NYA MENGGUNAKAN {belongsTo}
+        return $this->belongsTo(User::class);       // YANG TIDAK ADA FOREIGN KEY NYA MENGGUNAKAN {belongsTo}
     }
 }

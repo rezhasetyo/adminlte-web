@@ -47,4 +47,9 @@ class User extends Authenticatable
     public function profile(){
         return $this->hasOne(Profile::class);       // YANG TIDAK ADA FOREIGN KEY NYA MENGGUNAKAN {hasOne}
     }
+
+    public function kritik(){
+        return $this->hasMany(Kritik::class);       // Foreign key nya di Tabel Kritik
+    }
+
 }

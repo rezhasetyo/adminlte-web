@@ -9,6 +9,8 @@ use App\Http\Controllers\FilmController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\StaticTableController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\KritikController;
+// use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +46,9 @@ use App\Http\Controllers\GenreController;
 
 // GENRE
     Route::resource('genre', GenreController::class)->only([ 'index', 'show' ]);
+
+// KRITIK (film -> detail)
+    Route::resource('kritik', KritikController::class)->only([ 'store']);
 
 // LIBRARY PACKAGE
     Route::get('/library', [LibraryController::class,'index']);

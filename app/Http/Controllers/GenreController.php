@@ -8,6 +8,11 @@ use App\Models\Film;
 
 class GenreController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $datas = Genre::all();

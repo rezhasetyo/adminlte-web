@@ -20,7 +20,7 @@ class CreateKritiksTable extends Migration
             $table->unsignedBigInteger('film_id');     
             $table->foreign('film_id')->references('id')->on('films');
             $table->text('isi');
-            $table->text('point');
+            $table->integer('point');
             $table->timestamps();
         });
     }
