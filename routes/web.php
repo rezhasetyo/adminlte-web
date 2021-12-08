@@ -53,6 +53,7 @@ use App\Http\Controllers\KritikController;
 // LIBRARY PACKAGE
     Route::get('/library', [LibraryController::class,'index']);
     Route::get('/pdf', [LibraryController::class, 'createPDF']);
+    Route::get('/excel', [LibraryController::class, 'export']);
     Route::get('/qr', function () {
         return view('library/qrcode');
     });

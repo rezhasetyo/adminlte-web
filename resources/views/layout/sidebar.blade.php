@@ -119,7 +119,7 @@
                 <li class="nav-item">
                     <a href="/library" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Tabel Genre</p>
+                    <p>Cetak PDF dan Excel</p>
                     </a>
                 </li>
                 </ul>
