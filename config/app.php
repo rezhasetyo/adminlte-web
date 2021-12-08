@@ -174,6 +174,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        // Library Excel
         Maatwebsite\Excel\ExcelServiceProvider::class,
 
 
@@ -232,8 +234,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         
+        // Library Excel
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
+        // Library PDF
         'providers' => [Barryvdh\DomPDF\ServiceProvider::class,],
         'aliases' => ['PDF' => Barryvdh\DomPDF\Facade::class,]
 

@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Genre;
 use PDF;
 
+use App\Exports\GenresExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class LibraryController extends Controller
 {   
@@ -31,6 +34,11 @@ class LibraryController extends Controller
   
         // download PDF file with download method
             return $pdf->download('hasil.pdf');
-
     }
+
+    public function export() 
+    {
+        return Excel::download(new GenresExport, 'genre.xlsx');
+    }
+
 }

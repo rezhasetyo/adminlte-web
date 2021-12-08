@@ -41,7 +41,7 @@
 
         <div>
             <a href="{{ URL::to('/pdf') }}" class="btn btn-danger float-right mt-4">Cetak PDF</a>
-            <a href="#" class="btn btn-success float-right mt-4 mr-3">Cetak Excel</a>
+            <a href="/excel" class="btn btn-success float-right mt-4 mr-3">Cetak Excel</a>
         </div>
 
     </div>
