@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Cast;
 
 class CastController extends Controller
@@ -38,6 +39,8 @@ class CastController extends Controller
         $model->umur = $request->umur;
         $model->bio = $request->bio;
         $model->save();
+
+        Alert::success('Sukses', 'Berhasil Menambahkan Data');
         return redirect('cast');
     }
 
@@ -67,12 +70,16 @@ class CastController extends Controller
         $model->umur = $request->umur;
         $model->bio = $request->bio;
         $model->save();
+
+        Alert::success('Sukses', 'Berhasil Mengedit Data');
         return redirect('cast');
     }
 
     public function destroy($id){
         $model = Cast::find($id);
         $model->delete();
+
+        Alert::warning('Sukses', 'Berhasil Menghapus Data');
         return redirect('cast');
     }
 

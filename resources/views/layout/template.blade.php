@@ -140,5 +140,6 @@
 <script src="{{asset('adminlte')}}/dist/js/demo.js"></script>
 
 @stack('script')
+@include('sweetalert::alert')
 </body>
 </html>

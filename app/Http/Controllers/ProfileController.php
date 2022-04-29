@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Profile;
 
 class ProfileController extends Controller
@@ -34,6 +35,9 @@ class ProfileController extends Controller
         $profile->alamat = $request->alamat;
         $profile->bio = $request->bio;
         $profile->save();
+
+        // toast('Your Post as been submited!','success');
+        Alert::success('Sukses', 'Berhasil Mengubah Profil');
         return redirect('/profile');
     }
 

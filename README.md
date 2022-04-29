@@ -10,3 +10,4 @@
    - DOMPDF
    - Factory/Faker
    - Export Laravel Excel
+   - Sweetalert
