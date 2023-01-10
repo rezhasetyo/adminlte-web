@@ -22,7 +22,7 @@ class CastsTableSeeder extends Seeder
         // $casts -> save();
         
         $faker = Faker::create('id_ID');
-        for ($i=1; $i <= 5; $i++) { 
+        for ($i=1; $i <= 20; $i++) { 
             \DB::table('casts')->insert([
                 'nama'=>$faker->name,
                 'umur'=>$faker->numberBetween($min = 10, $max = 50),
