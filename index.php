@@ -1,3 +1,7 @@
+<?php
+  $cast = $_GET['cast'] ?? null;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="Asset/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="Asset/dist/css/adminlte.min.css">
+    <link href="Asset/logo.jpg" rel="SHORTCUT ICON"/>
     <!-- @stack('style') -->
 </head>
 
@@ -63,9 +68,13 @@
 
         <div class="content-wrapper">
             <!-- @yield('breadcrumb') -->
-            <section class="content">
-                <!-- @yield('content') -->
-            </section>
+            <?php
+                if(isset($cast)) {
+                    include "cast/". $cast. ".php";
+                }else {
+                    include "home.php";  }  ?>
+            <!-- <section class="content">
+            </section> -->
         </div>
 
         <footer class="main-footer">
