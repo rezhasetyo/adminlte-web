@@ -4,7 +4,6 @@
   $query = "SELECT * from casts WHERE id='$id' ";
   $ambil_data = mysqli_query($koneksi,$query);
   $getdata = mysqli_fetch_array($ambil_data);
-    $id = $getdata['id'] ?? '';
     $nama = $getdata['nama'] ?? '';
     $umur = $getdata['umur'] ?? '';
     $bio = $getdata['bio'] ?? '';
@@ -49,11 +48,13 @@
                     placeholder="Inputkan Bio"><?php echo $bio?></textarea>
                 </div>
 
+                <input type="hidden" name="id" value="<?php echo $id?>">
+
                 <div class="form-group" style="float:right;">
                     <?php if (!empty($id)) { ?>
-                        <button type="submit" class="btn btn-primary" name="save" value="edit">Edit Data</button>
+                        <button type="submit" class="btn btn-primary" name="simpan" value="update">Edit Data</button>
                     <?php } else {  ?>
-                        <button type="submit" class="btn btn-primary" name="save" value="create">Tambahkan Data</button>
+                        <button type="submit" class="btn btn-primary" name="simpan" value="store">Tambahkan Data</button>
                     <?php } ?>
                     <a href="?cast=index"><button type="button" class="btn btn-danger">Batal</button></a>
                     

@@ -37,7 +37,7 @@
 
             <tbody>
                 <?php 
-                    $no = 0; 
+                    $no = 1; 
                     while($getdata = mysqli_fetch_assoc($ambil_data))  
                         {       // Pembuka Kurung
                 ?>
@@ -50,8 +50,10 @@
                         <a href="index.php?cast=form&id=<?php echo $getdata['id']?>">
                             <button class="btn btn-info btn-sm">Edit</button> 
                         </a>
-                        <button class="btn btn-danger btn-sm mr-1" type="submit">Delete</button>
-                        <a class="btn btn-success btn-sm" href="#"> Detail</a>
+                        <a href="cast/action.php?hapusCast&id=<?php echo $getdata['id']?>"
+                                onClick="return confirm('Apakah yakin akan menghapus?'); if (ok) return true; else return false">
+                            <button class="btn btn-danger btn-sm">Hapus</button> 
+                        </a>
                     </td>
                 </tr>
                 <?php }     // Penutup Kurung?>
