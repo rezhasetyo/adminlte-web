@@ -1,3 +1,9 @@
+<?php
+    include "./koneksi.php";
+    $query = "SELECT * from casts ORDER BY id ASC";
+    $ambil_data = mysqli_query($koneksi,$query);
+?>
+
 <section class="content-header">
     <div class="container-fluid">
         <div class="row">
@@ -18,31 +24,37 @@
 <section class="content">
 <div class="card">
     <div class="card-body">
-        <table id="cast" class="table table-bordered table-striped">
+        <table id="casttable" class="table table-bordered table-striped">
             <thead class="justify-content-center">
                 <tr>
                     <th style="width:4%">#</th>
                     <th >Nama</th>
                     <th >Umur</th>
                     <th >Bio</th>
-                    <th style="width:18%">Action</th>
+                    <th style="width:20%">Action</th>
                 </tr>
             </thead>
 
             <tbody>
+                <?php 
+                    $no = 0; 
+                    while($getdata = mysqli_fetch_assoc($ambil_data))  
+                        {       // Pembuka Kurung
+                ?>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php echo $no++; ?></td>
+                    <td><?php echo $getdata['nama']  ?></td>
+                    <td><?php echo $getdata['umur']  ?></td>
+                    <td><?php echo $getdata['bio']  ?></td>
                     <td>
-                        <form action="#">
-                            <a class="btn btn-info btn-sm mr-1" href="#">Edit</a>
-                            <button class="btn btn-danger btn-sm mr-1" type="submit">Delete</button>
-                            <a class="btn btn-success btn-sm" href="#"> Detail</a>
-                        </form> 
+                        <a href="index.php?cast=form&id=<?php echo $getdata['id']?>">
+                            <button class="btn btn-info btn-sm">Edit</button> 
+                        </a>
+                        <button class="btn btn-danger btn-sm mr-1" type="submit">Delete</button>
+                        <a class="btn btn-success btn-sm" href="#"> Detail</a>
                     </td>
                 </tr>
+                <?php }     // Penutup Kurung?>
             </tbody>
         </table>
         <div>

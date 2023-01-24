@@ -1,3 +1,15 @@
+<?php
+  include "./koneksi.php";
+  $id = isset($_GET['id'])   ?   $_GET['id'] : '';
+  $query = "SELECT * from casts WHERE id='$id' ";
+  $ambil_data = mysqli_query($koneksi,$query);
+  $getdata = mysqli_fetch_array($ambil_data);
+    $id = $getdata['id'] ?? '';
+    $nama = $getdata['nama'] ?? '';
+    $umur = $getdata['umur'] ?? '';
+    $bio = $getdata['bio'] ?? '';
+?>
+
 <section class="content-header">
     <div class="container-fluid">
         <div class="row">
@@ -18,28 +30,33 @@
 <section class="content">
     <div class="container">
         <div class="col-8">
-            <form method="POST" action="#">
+            <form action ="cast/action.php" method="POST">
                 <div class="form-group">
                     <label for="nama">Nama</label>
                     <input type="text" id="nama" name="nama" class="form-control" 
-                    placeholder="Input Nama Lengkap">
+                    value="<?php echo $nama?>" placeholder="Inputkan Nama Lengkap">
                 </div>
 
                 <div class="form-group">
                     <label for="umur">Umur</label>
                     <input type="number" id="umur" class="form-control" name="umur" 
-                    placeholder="Inputkan Usia">
+                    value="<?php echo $umur?>" placeholder="Inputkan Umur">
                 </div>
 
                 <div class="form-group">
                     <label for="bio">Bio</label>
                     <textarea class="form-control" id="bio" name="bio" rows="2" 
-                    placeholder="Inputkan Bio"></textarea>
+                    placeholder="Inputkan Bio"><?php echo $bio?></textarea>
                 </div>
 
                 <div class="form-group" style="float:right;">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <?php if (!empty($id)) { ?>
+                        <button type="submit" class="btn btn-primary" name="save" value="edit">Edit Data</button>
+                    <?php } else {  ?>
+                        <button type="submit" class="btn btn-primary" name="save" value="create">Tambahkan Data</button>
+                    <?php } ?>
                     <a href="?cast=index"><button type="button" class="btn btn-danger">Batal</button></a>
+                    
                 </div>   
             </form>
         </div>  
