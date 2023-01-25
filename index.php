@@ -1,5 +1,6 @@
 <?php
   $cast = $_GET['cast'] ?? null;
+  $film = $_GET['film'] ?? null;
 ?>
 
 <!DOCTYPE html>
@@ -69,8 +70,10 @@
         <div class="content-wrapper">
             <!-- @yield('breadcrumb') -->
             <?php
-                if(isset($cast)) {
+                if (isset($cast)) {
                     include "cast/". $cast. ".php";
+                }elseif (isset($film)) {
+                    include "film/". $film. ".php";
                 }else {
                     include "home.php";  }  ?>
             <!-- <section class="content">

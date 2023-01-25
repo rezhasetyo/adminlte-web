@@ -1,7 +1,7 @@
 <?php
 include "../koneksi.php";
 
-if(isset($_POST['action'])){
+if(isset($_POST['simpan'])){
     $id = $_POST['id'];
     $nama = $_POST['nama'];
     $umur = $_POST['umur'];
@@ -31,7 +31,7 @@ if(isset($_POST['action'])){
     // }
 
 } else {
-    echo "Error";
+    echo "Error Action PHP";
 }
 ?>
 

@@ -30,5 +30,30 @@
                 </li>
             </ul>
         </li>
+
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-table"></i>
+                <p>Tabel Film   <i class="fas fa-angle-left right"></i>    </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="?film=index" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Daftar Film</p>
+                    </a>
+                </li>
+            </ul>
+                
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="?film=form" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Tambah Film</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
     </ul>
 </nav>
