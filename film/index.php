@@ -30,7 +30,7 @@
         ?>
         <div class="col-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="#" style="height:100px;">
+                <img class="card-img-top" src="Img/<?php echo $getdata['poster']?>" style="height:100px;">
                 <div class="card-body">
                     <h3 style="line-height: 0.8em;"> <b> <?php echo $getdata['judul']  ?> </b> </h3>
                     <span class="badge badge-info mb-3">Genre : <?php echo $getdata['genre_id']  ?> </span>

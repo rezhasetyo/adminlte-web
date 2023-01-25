@@ -31,38 +31,37 @@
 <section class="content">
     <div class="container">
         <div class="col-8">
-            <form action ="film/action.php" method="POST">
+            <form action ="film/action.php" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="judul">Judul</label>
                     <input type="text" id="judul" name="judul" class="form-control" 
-                            value="<?php echo $judul?>" placeholder="Inputkan Judul">
+                            value="<?php echo $judul?>" placeholder="Inputkan Judul" required>
                 </div>
 
                 <div class="form-group">
                     <label for="tahun">Tahun</label>
                     <input type="number" id="tahun" class="form-control" name="tahun" 
-                            value="<?php echo $tahun?>" placeholder="Inputkan Tahun">
+                            value="<?php echo $tahun?>" placeholder="Inputkan Tahun" required>
                 </div>
 
                 <div class="form-group">
                     <label for="genre_id">Genre</label>
                     <input type="number" id="genre_id" class="form-control" name="genre_id" 
-                            value="<?php echo $genre_id?>" placeholder="Pilih Genre">
+                            value="<?php echo $genre_id?>" placeholder="Pilih Genre" required>
                 </div>
 
                 <div class="form-group">
                     <label for="poster">Poster</label>
-                    <input type="text" id="poster" class="form-control" name="poster" 
-                        value="poster.jpg" disabled>
+                    <input type="file" id="poster" class="form-control" name="poster">
                 </div>
 
                 <div class="form-group">
                     <label for="ringkasan">Ringkasan</label>
                     <textarea class="form-control" id="ringkasan" name="ringkasan" rows="4" 
-                            placeholder="Inputkan Ringkasan"><?php echo $ringkasan?></textarea>
+                            placeholder="Inputkan Ringkasan" required><?php echo $ringkasan?></textarea>
                 </div>
 
-                <input type="hidden" name="id" value="<?php echo $id?>">
+                <input type="hidden" name="id" value="<?php echo $id ?>">
 
                 <div class="form-group" style="float:right;">
                     <?php if (!empty($id)) { ?>

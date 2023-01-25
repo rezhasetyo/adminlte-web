@@ -33,22 +33,22 @@
                 <div class="form-group">
                     <label for="nama">Nama</label>
                     <input type="text" id="nama" name="nama" class="form-control" 
-                    value="<?php echo $nama?>" placeholder="Inputkan Nama Lengkap">
+                    value="<?php echo $nama?>" placeholder="Inputkan Nama Lengkap" required>
                 </div>
 
                 <div class="form-group">
                     <label for="umur">Umur</label>
                     <input type="number" id="umur" class="form-control" name="umur" 
-                    value="<?php echo $umur?>" placeholder="Inputkan Umur">
+                    value="<?php echo $umur?>" placeholder="Inputkan Umur" required>
                 </div>
 
                 <div class="form-group">
                     <label for="bio">Bio</label>
                     <textarea class="form-control" id="bio" name="bio" rows="2" 
-                    placeholder="Inputkan Bio"><?php echo $bio?></textarea>
+                    placeholder="Inputkan Bio" required><?php echo $bio?></textarea>
                 </div>
 
-                <input type="hidden" name="id" value="<?php echo $id?>">
+                <input type="hidden" name="id" value="<?php echo $id ?>">
 
                 <div class="form-group" style="float:right;">
                     <?php if (!empty($id)) { ?>
