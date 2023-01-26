@@ -10,7 +10,6 @@ if(isset($_POST['simpan'])){
     $poster      = $_FILES['poster']['name'];
     $genre_id    = $_POST['genre_id'];
 
-
     if($_POST['simpan'] == "store"){   
         $dir = "../Img/";
         $tmpFile = $_FILES['poster']['tmp_name'];
@@ -18,10 +17,27 @@ if(isset($_POST['simpan'])){
 
         $query = "INSERT INTO films VALUES(null, '$judul', '$tahun', '$ringkasan', '$poster', '$genre_id')";
         $sql = mysqli_query($koneksi,$query);
+
     }elseif ($_POST['simpan'] == "update"){
-        $query = "UPDATE films SET judul='$judul', ringkasan='$ringkasan',
+        if ($poster == null) {
+            $query = "UPDATE films SET judul='$judul', tahun='$tahun', ringkasan='$ringkasan',
                     genre_id='$genre_id' WHERE id='$id'";
-        $sql = mysqli_query($koneksi,$query);
+            $sql = mysqli_query($koneksi,$query);
+        } else {
+            $query_select = "SELECT * FROM films WHERE id='$id'";
+            $sql_select = mysqli_query($koneksi, $query_select);
+            $result = mysqli_fetch_assoc($sql_select);
+            unlink("../Img/" .$result['poster']);
+
+            $dir = "../Img/";
+            $tmpFile = $_FILES['poster']['tmp_name'];
+            move_uploaded_file($tmpFile, $dir.$poster);
+
+            $query = "UPDATE films SET judul='$judul', tahun='$tahun', ringkasan='$ringkasan',
+                    poster='$poster', genre_id='$genre_id' WHERE id='$id'";
+            $sql = mysqli_query($koneksi,$query);
+        }
+
     }else {
         echo "Error store/update data";
     }

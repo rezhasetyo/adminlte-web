@@ -1,6 +1,7 @@
 <?php
   $cast = $_GET['cast'] ?? null;
   $film = $_GET['film'] ?? null;
+  $genre = $_GET['genre'] ?? null;
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="Asset/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="Asset/dist/css/adminlte.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.3/datatables.min.css"/> 
     <link href="Asset/logo.jpg" rel="SHORTCUT ICON"/>
     <!-- @stack('style') -->
 </head>
@@ -74,6 +76,8 @@
                     include "cast/". $cast. ".php";
                 }elseif (isset($film)) {
                     include "film/". $film. ".php";
+                }elseif (isset($genre)) {
+                    include "genre/". $genre. ".php";
                 }else {
                     include "home.php";  }  ?>
             <!-- <section class="content">
@@ -96,6 +100,13 @@
 <script src="Asset/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="Asset/dist/js/adminlte.min.js"></script>
 <script src="Asset/dist/js/demo.js"></script>
+<script src="Asset/plugins/datatables/jquery.dataTables.js"></script>
+<script src="Asset/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<script>
+$(function () {
+    $("#tableGenres").DataTable();
+  });
+</script>
 
 </body>
 </html>
